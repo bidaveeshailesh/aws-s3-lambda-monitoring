@@ -1,63 +1,76 @@
-# aws-s3-lambda-monitoring
-AWS project demonstrating S3 event monitoring using Lambda and CloudWatch Logs to track object PUT and GET activities.
 # AWS S3 Activity Monitoring with Lambda
 
-## Project Date
+## 📌 Project Overview
 
-2025
+This project demonstrates how to monitor activity in an **Amazon S3 bucket** using **AWS Lambda** and **Amazon CloudWatch Logs**.
 
-## Project Overview
+When objects are uploaded to or downloaded from the S3 bucket, an S3 event triggers the Lambda function. The Lambda function processes the event and records the activity in CloudWatch Logs.
 
-This project demonstrates how AWS Lambda can be used to monitor
-activities performed on objects in an Amazon S3 bucket.
+## 🏗️ Architecture
 
-When an object is uploaded or accessed, an S3 event notification
-can trigger a Lambda function. The Lambda function processes the
-event information and records relevant details in Amazon CloudWatch Logs.
+```text
+User
+  |
+  v
+Amazon S3 Bucket
+  |
+  | S3 Event
+  v
+AWS Lambda
+  |
+  | Logs
+  v
+Amazon CloudWatch
+```
 
-## AWS Services Used
+## ☁️ AWS Services Used
 
-- Amazon S3
+- **Amazon S3** — Stores objects and generates activity events.
+- **AWS Lambda** — Processes S3 events without managing servers.
+- **Amazon CloudWatch** — Stores and displays Lambda execution logs.
+- **AWS IAM** — Provides permissions required by the services.
+
+## ⚙️ How It Works
+
+1. An object is uploaded to or accessed from the S3 bucket.
+2. Amazon S3 generates an event.
+3. The event triggers the AWS Lambda function.
+4. Lambda processes the event details.
+5. Activity information is written to CloudWatch Logs.
+6. The logs can be reviewed for monitoring and troubleshooting.
+
+## 🔐 IAM Permissions
+
+The project requires appropriate IAM permissions for:
+
+- S3 event access
+- Lambda execution
+- CloudWatch log creation and writing
+
+## 🛠️ Technologies Used
+
+- AWS S3
 - AWS Lambda
 - Amazon CloudWatch
 - AWS IAM
+- Python
+- Git & GitHub
 
-## Project Objectives
+## 🎯 What I Learned
 
-- Create and configure an S3 bucket
-- Configure S3 event notifications
-- Create an AWS Lambda function
-- Trigger Lambda using S3 events
-- Process S3 activity information
-- Store logs in CloudWatch
-- Monitor bucket activity
+- How S3 event notifications work
+- How to create and use AWS Lambda functions
+- How Lambda can respond to S3 events
+- How to monitor Lambda execution using CloudWatch Logs
+- Basic AWS IAM permissions
+- How to document an AWS project using GitHub
 
-## Basic Workflow
+## 📂 Project Type
 
-S3 Bucket
-    |
-    | Object Event
-    v
-AWS Lambda
-    |
-    | Process Event
-    v
-CloudWatch Logs
+**Cloud / AWS / Serverless / Monitoring**
 
-## Example Events
+## 👨‍💻 Author
 
-- Object upload (PUT)
-- Object access/event notification (GET, where configured)
+**Shailesh Bidave**
 
-## What I Learned
-
-- S3 event notifications
-- AWS Lambda triggers
-- CloudWatch logging
-- IAM permissions
-- Basic serverless architecture
-- Monitoring AWS resources
-
-## Project Type
-
-Resume Project / Learning Project
+GitHub: [@bidaveeshailesh](https://github.com/bidaveeshailesh)
